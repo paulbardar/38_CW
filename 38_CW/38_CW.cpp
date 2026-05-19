@@ -7,11 +7,13 @@
 #include "Music.h"
 #include <deque>
 #include <ctime>
+#include "PriorityQueue.h"
+
 
 int main()
 {
+    
 
-    srand(time(0));
     /*
     myQueue::Queue<std::string> nums;
     nums.show();
@@ -32,7 +34,7 @@ int main()
     cout << endl;
     nums.show();
     */
-
+    /*
     std::deque<Music> folder;
 
     folder.push_back(Music("Single Ladies", "Beyonce", 2008));
@@ -54,7 +56,18 @@ int main()
         play.pop_front();
         cout << endl;
     }
+    */
 
+    myQueue::PriorityQueue<int> nums;
+    nums.push_back(5);
+    nums.push_back(2);
+    nums.push_back(4);
+    nums.push_back(4);
+    nums.push_back(5);
+    nums.push_back(6);
+    nums.push_back(1);
+
+    nums.show();
     return 0;
 }
 

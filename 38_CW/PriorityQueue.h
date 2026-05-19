@@ -14,12 +14,12 @@ namespace myQueue {
 				Queue<U>::head = Queue<U>::current = el;
 			}
 			else {
-				Node<U>* p = current;
-				while (p != nullptr && p->info < el - info) {
+				Node<U>* p = Queue<U>::current;
+				while (p != nullptr && p->info < el->info) {
 					p = p->prev;
 				}
 
-				if (p == current) {
+				if (p == Queue<U>::current) {
 					Queue<U>::push_back(el->info);
 					delete el;
 				}
@@ -29,8 +29,9 @@ namespace myQueue {
 					Queue<U>::head = el;
 				}
 				else {
-					Queue<U>* p2 = el;
+					Node<U>* p2 = p->next;
 					el->prev = p;
+					p->next = el;
 					el->next = p2;
 					p2->prev = el;
 				}
