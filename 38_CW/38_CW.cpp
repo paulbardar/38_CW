@@ -8,6 +8,7 @@
 #include <deque>
 #include <ctime>
 #include "PriorityQueue.h"
+#include "Person.h"
 
 
 int main()
@@ -58,6 +59,7 @@ int main()
     }
     */
 
+    /*
     myQueue::PriorityQueue<int> nums;
     nums.push_back(5);
     nums.push_back(2);
@@ -68,6 +70,23 @@ int main()
     nums.push_back(1);
 
     nums.show();
+
+    */
+
+    //Task 4
+    myQueue::PriorityQueue<Person> hospital;
+    hospital.push_back(Person("Elisey"));
+    hospital.push_back(Person("Mikhaylo", 0, 0, 1));
+    hospital.push_back(Person("Iryna", 0, 0, 1));
+    hospital.push_back(Person("Iryna", 1, 1, 0));
+    hospital.push_back(Person("Maxim", 1, 0, 0));
+
+    while (!hospital.isEmpty()) {
+        hospital.first().showInfo();
+        hospital.pop_front();
+
+    }
+
     return 0;
 }
 

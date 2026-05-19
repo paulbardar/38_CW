@@ -16,5 +16,10 @@ public:
 
 	void showInfo() const;
 
+	bool operator<(const Person& obj)const&; // a < b  *this < obj
+
+
+
+
 };
 
