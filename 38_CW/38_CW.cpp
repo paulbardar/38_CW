@@ -4,9 +4,15 @@
 #include <iostream>
 #include <string>
 #include "Queue.h"
+#include "Music.h"
+#include <deque>
+#include <ctime>
 
 int main()
 {
+
+    srand(time(0));
+    /*
     myQueue::Queue<std::string> nums;
     nums.show();
 
@@ -25,7 +31,29 @@ int main()
     }
     cout << endl;
     nums.show();
+    */
 
+    std::deque<Music> folder;
+
+    folder.push_back(Music("Single Ladies", "Beyonce", 2008));
+    folder.push_back(Music("Umbrella", "Rihanna featuring Jay - Z", 2007));
+    folder.push_back(Music("Shake it Off", "Taylor Swift", 2010));
+
+    myQueue::Queue<Music> play;
+
+    play.push_back(folder[rand() % folder.size()]);
+    play.push_back(folder[rand() % folder.size()]);
+    play.push_back(folder[rand() % folder.size()]);
+    play.push_back(folder[rand() % folder.size()]);
+    play.push_back(folder[rand() % folder.size()]);
+
+    while (!play.isEmpty())
+    {
+        Music item = play.first();
+        cout << item.getName() << " " << item.getAuthor() << " " << item.getYear() << endl;
+        play.pop_front();
+        cout << endl;
+    }
 
     return 0;
 }

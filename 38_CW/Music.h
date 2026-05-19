@@ -8,6 +8,7 @@ class Music
 	int year;
 
 public: 
+	Music();
 	Music(std::string name, std::string author, int year);
 
 	std::string getName() const;

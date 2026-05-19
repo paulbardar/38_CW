@@ -1,5 +1,12 @@
 #include "Music.h"
 
+Music::Music()
+{
+    name = "Underfine";
+    author = "Underfine";
+    year = 2000;
+}
+
 Music::Music(std::string name, std::string author, int year)
 {
     this->name = name;
